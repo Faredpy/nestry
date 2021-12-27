@@ -8,7 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
-    "outDir": "../project-my/dist",
+    "outDir": "../nestry/dist",
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
