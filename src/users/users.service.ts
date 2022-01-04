@@ -20,12 +20,18 @@ export class UsersService {
         // поскольку изначально у пользователя ролей нет указываем массив
         // в который добавляем один единственный id
         await user.$set('roles', [role.id])
+        user.roles = [role]
         return user;
     }
 
     async getAllUser() {
         const users = await this.userRepository.findAll({include: {all: true}});
         return users;
+    }
+
+    async getUserByEmail(email: string) {
+        const user = await this.userRepository.findOne({where: {email}, include: {all: true}})
+        return user
     }
 
 }
